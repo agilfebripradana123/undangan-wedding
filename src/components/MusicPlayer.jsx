@@ -37,27 +37,35 @@ export function MusicPlayer({ isPlaying, setIsPlaying }) {
         className="
           fixed
           right-4
-          bottom-20
-          md:right-6
-          md:bottom-6
-          z-50
+          bottom-24
+
+          md:right-7
+          md:bottom-24
+
+          lg:right-8
+          lg:bottom-24
+
+          z-[100]
 
           w-12
           h-12
+
           md:w-14
           md:h-14
 
           rounded-full
+
           flex
           items-center
           justify-center
 
-          bg-white/80
+          bg-white/95
           backdrop-blur-md
-          border
-          border-primary/15
 
-          shadow-[0_8px_25px_rgba(24,59,99,0.15)]
+          border
+          border-primary/20
+
+          shadow-[0_8px_30px_rgba(24,59,99,0.20)]
 
           text-primary
 
@@ -65,6 +73,9 @@ export function MusicPlayer({ isPlaying, setIsPlaying }) {
           duration-300
 
           hover:scale-110
+          hover:bg-white
+          hover:shadow-[0_12px_35px_rgba(24,59,99,0.28)]
+
           active:scale-95
         "
       >
