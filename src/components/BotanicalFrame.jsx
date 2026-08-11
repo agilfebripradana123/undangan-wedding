@@ -2,6 +2,8 @@ export function BotanicalFrame() {
   const base =
     "absolute pointer-events-none select-none w-36 sm:w-40 md:w-48 lg:w-52 opacity-75";
 
+  const floralImage = `${import.meta.env.BASE_URL}assets/ornaments/floral-blue.png`;
+
   return (
     <div
       className="
@@ -17,31 +19,33 @@ export function BotanicalFrame() {
     >
       {/* TOP LEFT */}
       <img
-        src="/assets/ornaments/floral-blue.png"
+        src={floralImage}
         alt=""
         className={`${base} left-0 top-0 rotate-180`}
       />
 
       {/* TOP RIGHT */}
       <img
-        src="/assets/ornaments/floral-blue.png"
+        src={floralImage}
         alt=""
         className={`${base} right-0 top-0 scale-y-[-1]`}
       />
 
       {/* BOTTOM LEFT */}
       <img
-        src="/assets/ornaments/floral-blue.png"
+        src={floralImage}
         alt=""
         className={`${base} bottom-0 left-0 scale-x-[-1]`}
       />
 
       {/* BOTTOM RIGHT */}
       <img
-        src="/assets/ornaments/floral-blue.png"
+        src={floralImage}
         alt=""
         className={`${base} bottom-0 right-0`}
       />
     </div>
   );
 }
+
+export default BotanicalFrame;

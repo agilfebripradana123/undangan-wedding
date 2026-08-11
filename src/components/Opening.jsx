@@ -1,4 +1,4 @@
-import { CornerOrnament } from "./FloralOrnament";
+
 import { Mail } from "lucide-react";
 import { BotanicalFrame } from "./BotanicalFrame";
 
@@ -11,25 +11,7 @@ export function Opening({ onEnter, guestName = "Tamu Undangan" }) {
 
       {/* Card */}
       <div className="relative z-10 w-full max-w-lg mx-auto flex flex-col items-center text-center space-y-stack-md bg-white/40 backdrop-blur-md p-stack-md rounded-xl shadow-lg border border-outline-variant/30 fade-up">
-        {/* Top ornament accent */}
-        <div className="w-16 h-16 opacity-80 fade-up delay-100">
-          <svg
-            width="64"
-            height="64"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M32 8 C36 12, 44 20, 40 32 C36 44, 24 48, 20 36"
-              stroke="#183B63"
-              strokeWidth="1.5"
-              opacity="0.6"
-              fill="none"
-            />
-            <circle cx="32" cy="18" r="3" fill="#183B63" opacity="0.5" />
-          </svg>
-        </div>
+      
 
         {/* Header */}
         <div className="space-y-4 fade-up delay-200">
@@ -72,26 +54,6 @@ export function Opening({ onEnter, guestName = "Tamu Undangan" }) {
               Buka Undangan
             </span>
           </button>
-        </div>
-
-        {/* Bottom ornament accent */}
-        <div className="w-16 h-16 opacity-80 rotate-180 fade-up delay-500">
-          <svg
-            width="64"
-            height="64"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M32 8 C36 12, 44 20, 40 32 C36 44, 24 48, 20 36"
-              stroke="#183B63"
-              strokeWidth="1.5"
-              opacity="0.6"
-              fill="none"
-            />
-            <circle cx="32" cy="18" r="3" fill="#183B63" opacity="0.5" />
-          </svg>
         </div>
       </div>
     </main>

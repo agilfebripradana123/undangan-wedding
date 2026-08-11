@@ -108,7 +108,55 @@
   }
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @layer components {
+  [data-aos] {
+    will-change: transform, opacity;
+  }
+
+  [data-aos].aos-animate {
+    transition-property: opacity, transform;
+  }
+
+  [data-aos='fade-up'],
+  [data-aos='fade-down'],
+  [data-aos='fade-left'],
+  [data-aos='fade-right'],
+  [data-aos='zoom-in'],
+  [data-aos='zoom-in-up'],
+  [data-aos='flip-up'] {
+    transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  }
+
+  .aos-init {
+    opacity: 0;
+  }
+
+  .aos-animate {
+    opacity: 1;
+  }
+
   .btn-primary {
     position: relative;
     padding-inline: 2rem;
@@ -123,6 +171,7 @@
     border-radius: 0.125rem;
     overflow: hidden;
     transition: all 0.3s ease;
+    background: transparent;
   }
 
   .btn-primary:hover {

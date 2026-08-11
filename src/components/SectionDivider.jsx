@@ -2,7 +2,7 @@ export function SectionDivider() {
   return (
     <div className="relative z-20 h-0">
       <img
-        src="/assets/decorations/flower-divider.png"
+        src={`${import.meta.env.BASE_URL}assets/decorations/flower-divider.png`}
         alt=""
         aria-hidden="true"
         className="

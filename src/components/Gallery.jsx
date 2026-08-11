@@ -5,14 +5,18 @@ export function Gallery() {
   return (
     <section
       id="gallery"
-      className="section-container relative overflow-hidden py-stack-lg fade-in-up"
+      className="section-container relative overflow-hidden py-stack-lg"
     >
       <BotanicalFrame />
 
       <div className="relative z-10 mx-auto max-w-4xl">
         {/* Title */}
         <div className="text-center mb-stack-lg">
-          <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary mb-4 italic">
+          <h2
+            className="font-display text-display-lg-mobile md:text-display-lg text-primary mb-4 italic"
+            data-aos="fade-up"
+            data-aos-duration="900"
+          >
             Galeri
           </h2>
 
@@ -25,10 +29,12 @@ export function Gallery() {
             {gallery.map((img) => (
               <div
                 key={img.id}
-                className="group relative overflow-hidden rounded-xl shadow-md fade-up"
+                className="group relative overflow-hidden rounded-xl shadow-md"
                 style={{
                   animationDelay: `${img.id * 100}ms`,
                 }}
+                data-aos={img.id % 2 === 0 ? 'zoom-in' : 'flip-up'}
+                data-aos-delay={img.id * 120}
               >
                 <div className="aspect-[3/4] overflow-hidden">
                   <img

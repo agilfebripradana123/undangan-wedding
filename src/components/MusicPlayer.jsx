@@ -24,7 +24,12 @@ export function MusicPlayer({ isPlaying, setIsPlaying }) {
 
   return (
     <>
-      <audio ref={audioRef} src="/assets/music.mp3" loop preload="auto" />
+      <audio
+        ref={audioRef}
+        src="/undangan-wedding/assets/music.mp3"
+        loop
+        preload="auto"
+      />
 
       <button
         onClick={toggleMusic}

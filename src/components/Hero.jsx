@@ -1,9 +1,9 @@
-import { useGuestName } from '../hooks/useguestName'
-import { BotanicalFrame } from './BotanicalFrame'
+import { useGuestName } from "../hooks/useguestName";
+import { BotanicalFrame } from "./BotanicalFrame";
 
 // Hero banner with personalized guest name
 export function Hero({ wedding }) {
-  const guestName = useGuestName()
+  const guestName = useGuestName();
 
   return (
     <section
@@ -12,21 +12,45 @@ export function Hero({ wedding }) {
     >
       <BotanicalFrame />
 
-      <div className="relative z-10 mx-auto w-full max-w-2xl space-y-2 fade-up">
-        <p className="font-label-caps text-label-caps uppercase tracking-[0.2em] text-secondary">
+      <div className="relative z-10 mx-auto w-full max-w-2xl space-y-2">
+        {/* Label */}
+        <p
+          className="font-label-caps text-label-caps uppercase tracking-[0.2em] text-secondary"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="0"
+        >
           Pernikahan
         </p>
 
-        <h1 className="font-display text-display-lg-mobile italic leading-tight text-primary md:text-display-lg">
+        {/* Couple Name */}
+        <h1
+          className="font-display text-display-lg-mobile italic leading-tight text-primary md:text-display-lg"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="150"
+        >
           Bambang &amp; Imroatus
         </h1>
 
-        <p className="mx-auto mt-4 max-w-xl font-body-lg text-body-lg leading-relaxed text-on-surface-variant">
+        {/* Wedding Date */}
+        <p
+          className="mx-auto mt-4 max-w-xl font-body-lg text-body-lg leading-relaxed text-on-surface-variant"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="300"
+        >
           {wedding?.display}
         </p>
 
-        {guestName !== 'Tamu Undangan' && (
-          <div className="mx-auto mt-8 w-full max-w-md">
+        {/* Guest Name */}
+        {guestName !== "Tamu Undangan" && (
+          <div
+            className="mx-auto mt-8 w-full max-w-md"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="450"
+          >
             <p className="font-body-md text-body-md text-on-surface-variant">
               Kepada Yth.
             </p>
@@ -38,7 +62,7 @@ export function Hero({ wedding }) {
         )}
       </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
