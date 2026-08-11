@@ -1,25 +1,26 @@
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 
 export function useGuestName() {
-  const [guestName, setGuestName] = useState("Tamu Undangan");
+  return useMemo(() => {
+    const pathname = window.location.pathname;
 
-  useEffect(() => {
-    const path = window.location.pathname;
+    const basePath = "/undangan-wedding/";
+    const guestSlug = pathname.startsWith(basePath)
+      ? pathname.slice(basePath.length)
+      : "";
 
-    // Ambil nama dari URL
-    const slug = path.replace(/^\/+|\/+$/g, "");
-
-    if (slug) {
-      const name = slug
-        .split("-")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ");
-
-      setGuestName(name);
+    if (!guestSlug) {
+      return "Tamu Undangan";
     }
-  }, []);
 
-  return guestName;
+    const guestName = guestSlug
+      .split("-")
+      .filter(Boolean)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
+
+    return guestName;
+  }, []);
 }
 
-export const useguestName = useGuestName;
+export default useGuestName;
